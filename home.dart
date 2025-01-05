@@ -18,13 +18,13 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    fetchBooks(); // Fetch books from server when widget is created
-    _setGreetingMessage(); // Set greeting message based on time
+    fetchBooks(); 
+    _setGreetingMessage();
   }
 
   Future<void> fetchBooks() async {
     try {
-      final books = await getBooks(); // Call to getBooks function in books.dart
+      final books = await getBooks(); 
       setState(() {
         _books = books;
         _isLoading = false;
@@ -39,7 +39,6 @@ class _HomeState extends State<Home> {
     }
   }
 
-  // Method to set greeting message based on time of day
   void _setGreetingMessage() {
     final hour = DateTime.now().hour;
 
@@ -82,7 +81,6 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Display dynamic greeting message
             Text(
               _greetingMessage,
               style: TextStyle(
@@ -92,17 +90,15 @@ class _HomeState extends State<Home> {
               ),
             ),
             const SizedBox(height: 16),
-            // Check if no books found
             _books.isEmpty
                 ? const Center(child: Text('No books found'))
                 : ListView.builder(
-              shrinkWrap: true, // To prevent overflow in Column
+              shrinkWrap: true, 
               itemCount: _books.length,
               itemBuilder: (context, index) {
                 final book = _books[index];
                 return GestureDetector(
                   onTap: () {
-                    // Navigate to the BookDetailsPage and pass the selected book
                     Navigator.push(
                       context,
                       MaterialPageRoute(
