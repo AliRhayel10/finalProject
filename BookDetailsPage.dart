@@ -18,7 +18,6 @@ class BookDetailsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Display book details
             Text(
               book.description,
               style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -28,7 +27,6 @@ class BookDetailsPage extends StatelessWidget {
             Text('Price: \$${book.price.toStringAsFixed(2)}'),
             Text('Quantity: ${book.quantity} available'),
             const SizedBox(height: 16),
-            // Display book image
             Image.network(
               book.image,
               fit: BoxFit.cover,
