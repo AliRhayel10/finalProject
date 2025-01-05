@@ -25,7 +25,6 @@ class Book {
   }
 }
 
-// Fetch books from the server
 Future<List<Book>> getBooks() async {
   final response = await http
       .get(Uri.parse('http://palacebooks.atwebpages.com/getProducts.php'));
@@ -47,7 +46,7 @@ Future<List<Book>> getBooks() async {
   }
 }
 
-// Widget to display each book in a card
+
 class BookCard extends StatelessWidget {
   final Book book;
 
